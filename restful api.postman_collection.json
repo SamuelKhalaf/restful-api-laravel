@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "31ede39d-ea28-4986-843f-5e44ba5a5cd7",
+		"name": "restful api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41921237"
+	},
+	"item": [
+		{
+			"name": "Get all setting data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{user-url}}/setting",
+					"host": [
+						"{{user-url}}"
+					],
+					"path": [
+						"setting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all categories data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{user-url}}/categories",
+					"host": [
+						"{{user-url}}"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{user-url}}/login?mobile=21304958&password=user user",
+					"host": [
+						"{{user-url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "mobile",
+							"value": "21304958"
+						},
+						{
+							"key": "password",
+							"value": "user user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Data ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|FYZQ7XZ1KpFQeVRAjvHKvjdDNwYj5nrJpYalYvj083f2b4fd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{user-url}}/user",
+					"host": [
+						"{{user-url}}"
+					],
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "mobile",
+							"value": "21304958",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "user user",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|XSKBSSTQ1Th3DpJF1ZNdaT0O7em2PBYUV4AaKy4s82aa3afb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{user-url}}/logout?id=3",
+					"host": [
+						"{{user-url}}"
+					],
+					"path": [
+						"logout"
+					],
+					"query": [
+						{
+							"key": "mobile",
+							"value": "21304958",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "user user",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store the Category data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10|g64nPeETP3iqAiYGzTCLRVxmW8sEXCWroc8wVsRz16a7799a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{admin-url}}/category?name=electronics&slug=new electronics&is_active=1",
+					"host": [
+						"{{admin-url}}"
+					],
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "electronics"
+						},
+						{
+							"key": "slug",
+							"value": "new electronics"
+						},
+						{
+							"key": "is_active",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the Category data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10|g64nPeETP3iqAiYGzTCLRVxmW8sEXCWroc8wVsRz16a7799a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{admin-url}}/category/5?slug=new slug",
+					"host": [
+						"{{admin-url}}"
+					],
+					"path": [
+						"category",
+						"5"
+					],
+					"query": [
+						{
+							"key": "slug",
+							"value": "new slug"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the Category data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10|g64nPeETP3iqAiYGzTCLRVxmW8sEXCWroc8wVsRz16a7799a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "lang",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{admin-url}}/category/4",
+					"host": [
+						"{{admin-url}}"
+					],
+					"path": [
+						"category",
+						"4"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "admin-url",
+			"value": "http://127.0.0.1:8000/api/admin",
+			"type": "string"
+		},
+		{
+			"key": "user-url",
+			"value": "http://127.0.0.1:8000/api/user",
+			"type": "string"
+		}
+	]
+}
